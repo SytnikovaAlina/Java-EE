@@ -10,8 +10,8 @@
     <div class="container-fluid">
         <nav class="navbar navbar-light bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/persons/">
-                    <img  alt="Логотип" id="top-image" src="images/logo.png" width="110" height="80">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/views/index.jsp">
+                    <img  alt="Логотип" id="top-image" src="${pageContext.request.contextPath}/images/logo.png" width="80" height="80">
                     <h2>Управление персоналом университета</h2>
                 </a>
             </div>

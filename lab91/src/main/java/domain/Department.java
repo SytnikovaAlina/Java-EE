@@ -8,46 +8,42 @@ public class Department {
 	
 	private Long id;
 	private String name;
-	private String shortname;
-	private String head;
+	private String depname;
 	private String telephone;
 	
-	private Long idF;
-	private Facultet fac;
+	private Long idR;
+	private Role role;
 	
 	// Конструкторы
 	public Department(){}
-	public Department(String name, String shortname, String head, String telephone, Facultet fac) {
+	public Department(String name, String depname, String telephone, Role role) {
 		this.name = name;
-		this.shortname = shortname;
-		this.head = head;
+		this.depname = depname;
 		this.telephone = telephone;
-		this.fac = fac;
+		this.role = role;
 	}
-	public Department(String name, String shortname, String head, String telephone, Long idF, Facultet fac) {
+	public Department(String name, String depname, String telephone, Long idR, Role role) {
 		this.name = name;
-		this.shortname = shortname;
-		this.head = head;
+		this.depname = depname;
 		this.telephone = telephone;
-		this.idF = idF;
-		this.fac = fac;
+		this.idR = idR;
+		this.role = role;
 	}
 	
-	public Department(Long id, String name, String shortname, String head, String telephone, Long idF, Facultet fac) {
+	public Department(Long id, String name, String depname, String telephone, Long idR, Role role) {
 		this.id = id;
 		this.name = name;
-		this.shortname = shortname;
-		this.head = head;
+		this.depname = depname;
 		this.telephone = telephone;
-		this.idF = idF;
-		this.fac = fac;
+		this.idR = idR;
+		this.role = role;
 	}
 	
 	
 	// геттеры и сеттеры
 	
-	public Facultet fac() {
-		return fac;
+	public Role role() {
+		return role;
 	}
 
 	
@@ -67,21 +63,12 @@ public class Department {
 	}
 	
 	
-	public String getShortname() {
-		return shortname;
+	public String getDepname() {
+		return depname;
 	}
-	public void setShortname(String shortname) {
-		this.shortname = shortname;
+	public void setShortname(String depname) {
+		this.depname = depname;
 	}
-	
-	
-	public String getHead() {
-		return head;
-	}
-	public void setHead(String head) {
-		this.head = head;
-	}
-	
 	
 	
 	public String getTel() {
@@ -92,32 +79,31 @@ public class Department {
 	}
 
 	
-	public String getFacultet() {
-		return fac.getName();
+    public String getRole() {
+		return role.getName();
 	}
 
-	public void setFacultet(Facultet fac) {
-		this.fac = fac;
+	public void setRole(Role rol) {
+		this.role = rol;
 	}
 	
-	public Long getIdF() {
-		return idF;
+	public Long getIdR() {
+		return idR;
 	}
 	
-	public void setIdF(Long idF) {
-		this.idF = idF;
+	public void setIdF(Long idR) {
+		this.idR = idR;
 	}
 	
 	
 	@Override
 	public String toString() {
 		
-		return "Кафедра {" + "Id = " + id +
-				", Название - " + name +
-				", Аббревиатура - " + shortname +
-				", Заведующий = " + head +
+		return  "Id = " + id +
+				", Кафедра - " + depname +
+				", ФИО - " + name +
 				", Телефоне = " + telephone +
-				", Факультет = " + getFacultet() +
+				", Должность = " + getRole() +
 				"}";
 	}
 

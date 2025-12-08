@@ -7,27 +7,43 @@ package domain;
 public class Facultet {
     private Long id;
     private String name;
-    private String shortname;
-    private String head;
+    private String facname;
     private String telephone;
     
+	private Long idR;
+	private Role role;
+    
     // Конструкторы
-    public Facultet(){}
-    public Facultet(String name, String shortname, String head, String telephone) {
-        this.name = name;
-        this.shortname = shortname;
-        this.head = head;
-        this.telephone = telephone;
-    }
-    public Facultet(String name, String shortname, String head, String telephone, Long id) {
-        this.name = name;
-        this.shortname = shortname;
-        this.head = head;
-        this.telephone = telephone;
-        this.id = id;
-    }
+	public Facultet(){}
+	public Facultet(String name, String facname, String telephone, Role role) {
+		this.name = name;
+		this.facname = facname;
+		this.telephone = telephone;
+		this.role = role;
+	}
+	public Facultet(String name, String facname, String telephone, Long idR, Role role) {
+		this.name = name;
+		this.facname = facname;
+		this.telephone = telephone;
+		this.idR = idR;
+		this.role = role;
+	}
+	
+	public Facultet(Long id, String name, String facname, String telephone, Long idR, Role role) {
+		this.id = id;
+		this.name = name;
+		this.facname = facname;
+		this.telephone = telephone;
+		this.idR = idR;
+		this.role = role;
+	}
     
     // геттеры и сеттеры
+    
+	public Role role() {
+		return role;
+	}
+    
     public Long getId() {
         return id;
     }
@@ -44,19 +60,11 @@ public class Facultet {
     }
     
     
-    public String getShortname() {
-        return shortname;
+    public String getFacname() {
+        return facname;
     }
-    public void setShortname(String shortname) {
-        this.shortname = shortname;
-    }
-    
-    
-    public String getHead() {
-        return head;
-    }
-    public void setHead(String head) {
-        this.head = head;
+    public void setShortname(String facname) {
+        this.facname = facname;
     }
     
     
@@ -70,10 +78,31 @@ public class Facultet {
 
     
     
+    public String getRole() {
+		return role.getName();
+	}
+
+	public void setRole(Role rol) {
+		this.role = rol;
+	}
+	
+	public Long getIdR() {
+		return idR;
+	}
+	
+	public void setIdF(Long idR) {
+		this.idR = idR;
+	}
+    
+    
     @Override
     public String toString() {
-        return "Факультет {" + "Id = " + id + ", Название = " + name + ", Аббревиатура = " + shortname + 
-                ", Глава = " + head +", Телефон = " + telephone +"}";
+    	return  "Id = " + id +
+			", Факультет - " + facname +
+			", ФИО - " + name +
+			", Телефоне = " + telephone +
+			", Должность = " + getRole() +
+			"}";
     }
 
 }
