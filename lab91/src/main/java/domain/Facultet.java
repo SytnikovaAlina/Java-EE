@@ -63,7 +63,7 @@ public class Facultet {
     public String getFacname() {
         return facname;
     }
-    public void setShortname(String facname) {
+    public void setFacname(String facname) {
         this.facname = facname;
     }
     
@@ -90,7 +90,7 @@ public class Facultet {
 		return idR;
 	}
 	
-	public void setIdF(Long idR) {
+	public void setIdR(Long idR) {
 		this.idR = idR;
 	}
     

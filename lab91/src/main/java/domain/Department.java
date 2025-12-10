@@ -66,7 +66,7 @@ public class Department {
 	public String getDepname() {
 		return depname;
 	}
-	public void setShortname(String depname) {
+	public void setDepname(String depname) {
 		this.depname = depname;
 	}
 	
@@ -79,9 +79,10 @@ public class Department {
 	}
 
 	
-    public String getRole() {
-		return role.getName();
+	public String getRole() {
+	    return role != null ? role.getName() : "";
 	}
+
 
 	public void setRole(Role rol) {
 		this.role = rol;
@@ -91,7 +92,7 @@ public class Department {
 		return idR;
 	}
 	
-	public void setIdF(Long idR) {
+	public void setIdR(Long idR) {
 		this.idR = idR;
 	}
 	

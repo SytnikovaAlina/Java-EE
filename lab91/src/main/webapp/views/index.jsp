@@ -17,11 +17,18 @@
         <br><br><br>
         <div class="list-group text-center py-3 px-3">
             <h2>Функции системы</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-primary"><a href="department.jsp">Кафедры</a></li>
-                <li class="list-group-item list-group-item-primary"><a href="facultet.jsp">Факультеты</a></li>
-                <li class="list-group-item list-group-item-primary"><a href="role.jsp">Должности</a></li>
-            </ul>
+            <ul class="list-group">
+			    <li class="list-group-item list-group-item-primary">
+			        <a href="${pageContext.request.contextPath}/department">Кафедры</a>
+			    </li>
+			    <li class="list-group-item list-group-item-primary">
+			        <a href="${pageContext.request.contextPath}/facultet">Факультеты</a>
+			    </li>
+			    <li class="list-group-item list-group-item-primary">
+			        <a href="${pageContext.request.contextPath}/role">Должности</a>
+			    </li>
+			</ul>
+
         </div>
         <br><br>
     </div>

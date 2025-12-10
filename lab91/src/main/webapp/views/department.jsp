@@ -1,20 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ page import="domain.Role"%>
 <%@ page import="domain.Department"%>
-<%
-    Role r1 = new Role("Заведующий кафедрой", 1L);
-    Role r2 = new Role("Декан факультета", 2L);
 
-    Role[] roles = new Role[]{r1, r2};
-    pageContext.setAttribute("roles", roles);
-
-    Department p1 = new Department(1L, "Genz P.D.", "PI", "8-909-456-62-93", 1L, r2);
-    Department p2 = new Department(2L, "Pedro H.K.", "TD", "8-938-452-77-91", 1L, r2);
-    Department[] persons = new Department[]{p1, p2};
-    pageContext.setAttribute("persons", persons);
-%>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -53,13 +41,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="person" items="${persons}">
+                    <c:forEach var="dep" items="${deps}">
                         <tr>
-                            <td>${person.getId()}</td>
-                            <td>${person.getName()}</td>
-                            <td>${person.getDepname()}</td>
-                            <td>${person.getRole()}</td>
-                            <td>${person.getTel()}</td>
+                            <td>${dep.getId()}</td>
+                            <td>${dep.getName()}</td>
+                            <td>${dep.getDepname()}</td>
+                            <td>${dep.getRole()}</td>
+                            <td>${dep.getTel()}</td>
                             <td width="20">
                                 <a href="#" role="button" class="btn btn-outline-primary">
                                     <img alt="Редактировать" src="${pageContext.request.contextPath}/images/check.png" width="20" height="20">
