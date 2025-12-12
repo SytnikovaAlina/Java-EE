@@ -50,13 +50,14 @@
                             <td>${fac.getRole()}</td>
                             <td>${fac.getTel()}</td>
                             <td width="20">
-                                <a href="#" role="button" class="btn btn-outline-primary">
+                                <a href="<c:url value="/editfac?id=${fac.getId()}"/>" role="button" class="btn btn-outline-primary">
                                     <img alt="Редактировать" src="${pageContext.request.contextPath}/images/check.png" width="20" height="20">
                                 </a>
                             </td>
                             <td width="20">
-                                <a href="#" role="button" class="btn btn-outline-primary">
-                                    <img alt="Удалить" src="${pageContext.request.contextPath}/images/trash.png" width="20" height="20">
+                                <a href="<c:url value="/deletefac?id=${fac.getId()}" />" role="button" class="btn btn-outline-primary">
+                                    <img alt="Удалить" src="${pageContext.request.contextPath}/images/trash.png" width="20" height="20"
+                                    onclick="return confirm('Удалить сотрудника с кодом:'+${fac.getId()}+'?')">
                                 </a>
                             </td>
                         </tr>

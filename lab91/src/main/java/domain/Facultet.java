@@ -79,7 +79,7 @@ public class Facultet {
     
     
     public String getRole() {
-		return role.getName();
+    		return role != null ? role.getName() : "";
 	}
 
 	public void setRole(Role rol) {

@@ -49,13 +49,14 @@
                             <td>${dep.getRole()}</td>
                             <td>${dep.getTel()}</td>
                             <td width="20">
-                                <a href="#" role="button" class="btn btn-outline-primary">
+                                <a href="<c:url value="/editdep?id=${dep.getId()}"/>" role="button" class="btn btn-outline-primary">
                                     <img alt="Редактировать" src="${pageContext.request.contextPath}/images/check.png" width="20" height="20">
                                 </a>
                             </td>
                             <td width="20">
-                                <a href="#" role="button" class="btn btn-outline-primary">
-                                    <img alt="Удалить" src="${pageContext.request.contextPath}/images/trash.png" width="20" height="20">
+                                <a href="<c:url value="/deletedep?id=${dep.getId()}" />" role="button" class="btn btn-outline-primary">
+                                    <img alt="Удалить" src="${pageContext.request.contextPath}/images/trash.png" width="20" height="20" 
+                                    onclick="return confirm('Удалить сотрудника с кодом:'+${dep.getId()}+'?')">
                                 </a>
                             </td>
                         </tr>
