@@ -15,11 +15,11 @@ public class Facultet {
     
     // Конструкторы
 	public Facultet(){}
-	public Facultet(String name, String facname, String telephone, Role role) {
+	public Facultet(String name, String facname, String telephone, Long idR) {
 		this.name = name;
 		this.facname = facname;
 		this.telephone = telephone;
-		this.role = role;
+		this.idR = idR;
 	}
 	public Facultet(String name, String facname, String telephone, Long idR, Role role) {
 		this.name = name;
@@ -63,7 +63,7 @@ public class Facultet {
     public String getFacname() {
         return facname;
     }
-    public void setShortname(String facname) {
+    public void setFacname(String facname) {
         this.facname = facname;
     }
     
@@ -90,7 +90,7 @@ public class Facultet {
 		return idR;
 	}
 	
-	public void setIdF(Long idR) {
+	public void setIdR(Long idR) {
 		this.idR = idR;
 	}
     

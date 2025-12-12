@@ -3,18 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ page import="domain.Role"%>
 <%@ page import="domain.Facultet"%>
-<%
-    Role r1 = new Role("Заведующий кафедрой", 1L);
-    Role r2 = new Role("Декан факультета", 2L);
 
-    Role[] roles = new Role[]{r1, r2};
-    pageContext.setAttribute("roles", roles);
-
-    Facultet p1 = new Facultet(1L, "Ivanov V.V.", "KT&IB", "8-928-345-12-33", 1L, r2);
-    Facultet p2 = new Facultet(2L, "Suzi E.S.", "TD", "8-928-444-33-21", 1L, r2);
-    Facultet[] persons = new Facultet[]{p1, p2};
-    pageContext.setAttribute("persons", persons);
-%>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -53,13 +42,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="person" items="${persons}">
+                    <c:forEach var="fac" items="${facs}">
                         <tr>
-                            <td>${person.getId()}</td>
-                            <td>${person.getName()}</td>
-                            <td>${person.getFacname()}</td>
-                            <td>${person.getRole()}</td>
-                            <td>${person.getTel()}</td>
+                            <td>${fac.getId()}</td>
+                            <td>${fac.getName()}</td>
+                            <td>${fac.getFacname()}</td>
+                            <td>${fac.getRole()}</td>
+                            <td>${fac.getTel()}</td>
                             <td width="20">
                                 <a href="#" role="button" class="btn btn-outline-primary">
                                     <img alt="Редактировать" src="${pageContext.request.contextPath}/images/check.png" width="20" height="20">
